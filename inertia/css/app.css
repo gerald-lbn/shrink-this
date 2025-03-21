@@ -1,10 +1,103 @@
+@import url('tokens.css');
+
+.display-2xl {
+  font-size: var(--display-2xl-size);
+  line-height: var(--display-2xl-line-height);
+  letter-spacing: var(--letter-spacing-narrow);
+}
+
+.display-xl {
+  font-size: var(--display-xl-size);
+  line-height: var(--display-xl-line-height);
+  letter-spacing: var(--letter-spacing-narrow);
+}
+
+.display-lg {
+  font-size: var(--display-lg-size);
+  line-height: var(--display-lg-line-height);
+  letter-spacing: var(--letter-spacing-narrow);
+}
+
+.display-md {
+  font-size: var(--display-md-size);
+  line-height: var(--display-md-line-height);
+  letter-spacing: var(--letter-spacing-narrow);
+}
+
+.display-sm {
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.display-xs {
+  font-size: var(--display-xs-size);
+  line-height: var(--display-xs-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.text-xl {
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.text-lg {
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.text-md {
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.text-sm {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.text-xs {
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-line-height);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line-height);
+  letter-spacing: var(--letter-spacing-normal);
 }
