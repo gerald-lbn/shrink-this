@@ -1,0 +1,29 @@
+.auth-layout {
+  display: flex;
+  flex: 1 1 0%;
+  height: 100svh;
+
+  & > main,
+  & > aside {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 40rem;
+    padding: 0 2rem;
+  }
+
+  & > aside {
+    background-color: var(--bg-tertiary);
+  }
+}

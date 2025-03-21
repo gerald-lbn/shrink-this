@@ -8,5 +8,6 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
+import './routes/auth.js'
 
+router.on('/').renderInertia('home')

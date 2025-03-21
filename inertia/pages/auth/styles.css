@@ -1,0 +1,26 @@
+div.auth-container {
+  max-width: 22.5rem;
+  width: 100%;
+}
+
+div.auth-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4xl);
+}
+
+form.credentials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+div.auth-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.auth-footer {
+  align-self: center;
+}

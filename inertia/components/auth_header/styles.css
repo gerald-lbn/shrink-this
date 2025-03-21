@@ -1,0 +1,13 @@
+header.auth-header {
+  & > h1 {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: var(--display-md-size);
+    line-height: var(--display-md-line-height);
+    letter-spacing: var(--letter-spacing-narrow);
+  }
+  & > p {
+    color: var(--text-tertiary);
+    margin-top: var(--spacing-lg);
+  }
+}
