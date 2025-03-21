@@ -15,7 +15,7 @@ export default function IconBarChartSquare2({ ...props }: IconProps) {
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        stroke-Linejoin="round"
+        strokeLinejoin="round"
       />
     </svg>
   )

@@ -15,7 +15,7 @@ export default function Globe01(props: IconProps) {
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        stroke-Linejoin="round"
+        strokeLinejoin="round"
       />
     </svg>
   )
