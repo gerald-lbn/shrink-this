@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 18.5rem minmax(0, 1fr);
 
-  main {
+  & > main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
