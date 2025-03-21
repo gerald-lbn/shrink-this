@@ -1,3 +1,8 @@
+import 'reflect-metadata'
+
+import { Ignitor, prettyPrintError } from '@adonisjs/core'
+import { configure, processCLIArgs, run } from '@japa/runner'
+
 /*
 |--------------------------------------------------------------------------
 | Test runner entrypoint
@@ -11,10 +16,6 @@
 */
 
 process.env.NODE_ENV = 'test'
-
-import 'reflect-metadata'
-import { Ignitor, prettyPrintError } from '@adonisjs/core'
-import { configure, processCLIArgs, run } from '@japa/runner'
 
 /**
  * URL to the application root. AdonisJS need it to resolve

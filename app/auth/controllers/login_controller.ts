@@ -1,5 +1,5 @@
-import User from '#auth/models/user'
 import type { HttpContext } from '@adonisjs/core/http'
+import User from '#auth/models/user'
 
 export default class LoginController {
   async render({ inertia }: HttpContext) {

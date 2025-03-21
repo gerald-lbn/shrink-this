@@ -1,3 +1,5 @@
+import './styles.css'
+
 interface DialogProps extends React.HTMLProps<HTMLDialogElement> {
   icon: React.ReactNode
   title?: string
@@ -5,7 +7,6 @@ interface DialogProps extends React.HTMLProps<HTMLDialogElement> {
   main: React.ReactNode
   footer?: React.ReactNode
 }
-import './styles.css'
 
 export default function Modal({
   open,

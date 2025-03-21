@@ -1,5 +1,7 @@
 import { HTMLAttributes } from 'react'
+
 import Sidebar from '~/components/sidebar'
+
 import './styles.css'
 
 interface AppLayoutProps extends HTMLAttributes<HTMLDivElement> {}

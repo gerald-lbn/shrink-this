@@ -1,10 +1,11 @@
 import { HTMLAttributes } from 'react'
-import SidebarItem from '~/components/sidebar/item'
+
 import IconBarChartSquare2 from '~/components/icons/bar-chart-square-2'
-import IconSettings01 from '~/components/icons/settings-01'
 import Globe01 from '~/components/icons/globe-01'
 import IconHomeLine from '~/components/icons/home-line'
 import IconLink01 from '~/components/icons/link-01'
+import IconSettings01 from '~/components/icons/settings-01'
+import SidebarItem from '~/components/sidebar/item'
 
 import './styles.css'
 
@@ -16,7 +17,11 @@ export default function Sidebar({}: SidebarProps) {
       <div className="navigation">
         <header></header>
         <nav>
-          <SidebarItem icon={<IconHomeLine />} label="Dashboard" href="/dashboard" />
+          <SidebarItem
+            icon={<IconHomeLine />}
+            label="Dashboard"
+            href="/dashboard"
+          />
           <SidebarItem icon={<IconLink01 />} label="Links" />
           <SidebarItem icon={<IconBarChartSquare2 />} label="Analytics" />
           <SidebarItem icon={<Globe01 />} label="Domains" href="/domains" />

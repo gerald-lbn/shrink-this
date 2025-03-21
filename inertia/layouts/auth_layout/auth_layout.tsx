@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+
 import './styles.css'
 
 interface AuthLayoutProps extends HTMLAttributes<HTMLDivElement> {}

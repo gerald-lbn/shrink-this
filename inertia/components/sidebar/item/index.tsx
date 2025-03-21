@@ -1,4 +1,5 @@
 import { AnchorHTMLAttributes } from 'react'
+
 import './styles.css'
 
 interface SidebarItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {

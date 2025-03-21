@@ -10,8 +10,12 @@ router
     router.get('/login', [LoginController, 'render']).as('login.render')
     router.post('/login', [LoginController, 'handle']).as('login.handle')
 
-    router.get('/register', [RegisterController, 'render']).as('register.render')
-    router.post('/register', [RegisterController, 'handle']).as('register.handle')
+    router
+      .get('/register', [RegisterController, 'render'])
+      .as('register.render')
+    router
+      .post('/register', [RegisterController, 'handle'])
+      .as('register.handle')
   })
   .use(middleware.guest())
 

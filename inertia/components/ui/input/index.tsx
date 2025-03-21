@@ -1,7 +1,9 @@
 import * as React from 'react'
+
 import './styles.css'
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string
   hint?: string
   error?: string
@@ -17,7 +19,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {error && <span className="error">{error}</span>}
       </div>
     )
-  }
+  },
 )
 Input.displayName = 'Input'
 

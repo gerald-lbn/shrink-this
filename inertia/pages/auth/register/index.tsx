@@ -1,9 +1,10 @@
 import { useForm } from '@inertiajs/react'
 
 import AuthHeader from '~/components/auth_header'
-import AuthLayout from '~/layouts/auth_layout/auth_layout'
 import { Button } from '~/components/ui/button'
 import { Input } from '~/components/ui/input'
+import AuthLayout from '~/layouts/auth_layout/auth_layout'
+
 import '../styles.css'
 
 export default function Login() {
@@ -22,7 +23,10 @@ export default function Login() {
     <AuthLayout>
       <div className="auth-container">
         <div className="auth-content">
-          <AuthHeader heading="Sign up" subheading="Create an account to continue" />
+          <AuthHeader
+            heading="Sign up"
+            subheading="Create an account to continue"
+          />
           <form className="credentials" method="post" onSubmit={handleSubmit}>
             <Input
               type="text"
@@ -59,7 +63,8 @@ export default function Login() {
           </form>
 
           <p className="auth-footer">
-            Already have an account? <Button variant="link-color">Log in</Button>
+            Already have an account?{' '}
+            <Button variant="link-color">Log in</Button>
           </p>
         </div>
       </div>

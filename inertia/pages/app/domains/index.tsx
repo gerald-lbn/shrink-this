@@ -1,13 +1,15 @@
-import PageHeader from '~/components/page_header'
+import { useRef } from 'react'
+
 import EmptyState from '~/components/empty_state'
-import { Button } from '~/components/ui/button'
+import Globe01 from '~/components/icons/globe-01'
 import SearchMd from '~/components/icons/search-md'
+import PageHeader from '~/components/page_header'
+import { Button } from '~/components/ui/button'
 import Dialog from '~/components/ui/dialog'
 import AppLayout from '~/layouts/app_layout'
-import { useRef } from 'react'
-import Globe01 from '~/components/icons/globe-01'
 
 import './styles.css'
+
 import { Input } from '~/components/ui/input'
 
 export default function Dashboard() {
@@ -42,7 +44,12 @@ export default function Dashboard() {
         description="Add your custom domain to start using it with the application."
         main={
           <form id="add-domain-form">
-            <Input type="text" label="Your domain" placeholder="link.acme.com" required />
+            <Input
+              type="text"
+              label="Your domain"
+              placeholder="link.acme.com"
+              required
+            />
           </form>
         }
         footer={

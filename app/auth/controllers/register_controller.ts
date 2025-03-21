@@ -1,8 +1,8 @@
+import type { HttpContext } from '@adonisjs/core/http'
 import { PasswordPwnedException } from '#auth/exceptions/password_pwned_exception'
 import { UserRepository } from '#auth/repositories/user_repository'
 import { HaveIBeenPwnedService } from '#auth/services/have_i_been_pwned'
 import { registerValidator } from '#auth/validators/register_validator'
-import type { HttpContext } from '@adonisjs/core/http'
 
 export default class RegisterController {
   async render({ inertia }: HttpContext) {
@@ -11,7 +11,8 @@ export default class RegisterController {
 
   async handle({ auth, request, response }: HttpContext) {
     // Validate the request data
-    const { fullName, email, password } = await request.validateUsing(registerValidator)
+    const { fullName, email, password } =
+      await request.validateUsing(registerValidator)
 
     // Check if the password has been pwned (i.e leaked in a data breach)
     const pwned = await HaveIBeenPwnedService.check(password)

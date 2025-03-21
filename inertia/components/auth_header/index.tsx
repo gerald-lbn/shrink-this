@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+
 import './styles.css'
 
 interface AuthHeaderProps extends HTMLAttributes<HTMLDivElement> {
