@@ -1,0 +1,11 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: 18.5rem minmax(0, 1fr);
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 2rem 3rem 2rem;
+  }
+}

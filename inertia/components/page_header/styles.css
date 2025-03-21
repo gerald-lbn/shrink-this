@@ -1,0 +1,21 @@
+.page-header {
+  display: grid;
+  gap: var(--spacing-xl);
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+
+    h1 {
+      font-size: var(--display-xs-size);
+      font-weight: var(--display-sm-line-height);
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--text-tertiary);
+      max-width: 30rem;
+    }
+  }
+}
