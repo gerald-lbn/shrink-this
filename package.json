@@ -67,6 +67,7 @@
     "@adonisjs/shield": "^8.1.2",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^4.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@inertiajs/react": "^2.0.5",
     "@vinejs/vine": "^3.0.0",
     "edge.js": "^6.2.1",
@@ -81,6 +82,5 @@
       "./app/controllers/**/*.ts",
       "./app/middleware/*.ts"
     ]
-  },
-  "prettier": "@adonisjs/prettier-config"
+  }
 }

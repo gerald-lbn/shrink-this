@@ -13,6 +13,7 @@
         "@adonisjs/shield": "^8.1.2",
         "@adonisjs/static": "^1.1.1",
         "@adonisjs/vite": "^4.0.0",
+        "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
         "@inertiajs/react": "^2.0.5",
         "@vinejs/vine": "^3.0.0",
         "edge.js": "^6.2.1",
@@ -236,6 +237,8 @@
     "@humanwhocodes/module-importer": ["@humanwhocodes/module-importer@1.0.1", "", {}, "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA=="],
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.2", "", {}, "sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ=="],
+
+    "@ianvs/prettier-plugin-sort-imports": ["@ianvs/prettier-plugin-sort-imports@4.4.1", "", { "dependencies": { "@babel/generator": "^7.26.2", "@babel/parser": "^7.26.2", "@babel/traverse": "^7.25.9", "@babel/types": "^7.26.0", "semver": "^7.5.2" }, "peerDependencies": { "@vue/compiler-sfc": "2.7.x || 3.x", "prettier": "2 || 3" }, "optionalPeers": ["@vue/compiler-sfc"] }, "sha512-F0/Hrcfpy8WuxlQyAWJTEren/uxKhYonOGY4OyWmwRdeTvkh9mMSCxowZLjNkhwi/2ipqCgtXwwOk7tW0mWXkA=="],
 
     "@inertiajs/core": ["@inertiajs/core@2.0.5", "", { "dependencies": { "axios": "^1.8.2", "deepmerge": "^4.0.0", "qs": "^6.9.0" } }, "sha512-AEhWsfkn+rHCO35mArmLQVVkbzETJby8QZ9iwRxTz891kbWS+ZAiEPa7ROJkDg3iaPYKVGBnI126xCUVxxesJg=="],
 
