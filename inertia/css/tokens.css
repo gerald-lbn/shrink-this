@@ -1,7 +1,7 @@
 @import url('colors.css');
 
 :root {
-  --font-body: 'Inter', sans-serif;
+  --font-body: 'Outfit', sans-serif;
 
   --text-primary: var(--gray-950);
   --text-primary_on_brand: white;
