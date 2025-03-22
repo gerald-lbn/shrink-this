@@ -19,18 +19,22 @@ export default function Domains(
 ) {
   const dialog = useRef<HTMLDialogElement>(null)
 
-  const { data, setData, post, processing, errors, reset } = useForm({
-    url: '',
-    userId: props.user.id,
-  })
+  const dialogClose = () => {
+    dialog.current?.close()
+    clearErrors('url')
+    reset('url')
+  }
+
+  const { data, setData, post, processing, errors, reset, clearErrors } =
+    useForm({
+      url: '',
+      userId: props.user.id,
+    })
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     post('/domains', {
-      onSuccess: () => {
-        dialog.current?.close()
-        reset('url')
-      },
+      onSuccess: dialogClose,
     })
   }
 
@@ -61,6 +65,7 @@ export default function Domains(
         icon={<Globe01 />}
         title="Add a domain"
         description="Add your custom domain to start using it with the application."
+        onClose={dialogClose}
         main={
           <form id="add-domain-form" onSubmit={handleSubmit}>
             <Input
@@ -79,10 +84,7 @@ export default function Domains(
             <Button
               variant="secondary"
               onClick={() => {
-                if (!processing) {
-                  dialog.current?.close()
-                  reset('url')
-                }
+                if (!processing) dialogClose()
               }}
               disabled={processing}
             >

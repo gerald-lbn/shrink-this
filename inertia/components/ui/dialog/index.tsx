@@ -1,11 +1,12 @@
 import './styles.css'
 
-interface DialogProps extends React.HTMLProps<HTMLDialogElement> {
+interface DialogProps extends React.DialogHTMLAttributes<HTMLDialogElement> {
   icon: React.ReactNode
   title?: string
   description?: string
   main: React.ReactNode
   footer?: React.ReactNode
+  ref?: React.Ref<HTMLDialogElement>
 }
 
 export default function Modal({
