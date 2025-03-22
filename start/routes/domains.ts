@@ -5,6 +5,8 @@ const DomainsController = () =>
   import('#domains/controllers/domains_controller')
 
 router
-  .get('/domains', [DomainsController, 'render'])
-  .as('domains.render')
+  .group(() => {
+    router.get('/domains', [DomainsController, 'render']).as('domains.render')
+    router.post('/domains', [DomainsController, 'handle']).as('domains.handle')
+  })
   .use(middleware.auth())

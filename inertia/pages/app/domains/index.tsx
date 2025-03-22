@@ -1,3 +1,6 @@
+import { type InferPageProps } from '@adonisjs/inertia/types'
+import { useForm } from '@inertiajs/react'
+import DomainsController from '#domains/controllers/domains_controller'
 import { useRef } from 'react'
 
 import EmptyState from '~/components/empty_state'
@@ -6,14 +9,30 @@ import SearchMd from '~/components/icons/search-md'
 import PageHeader from '~/components/page_header'
 import { Button } from '~/components/ui/button'
 import Dialog from '~/components/ui/dialog'
+import { Input } from '~/components/ui/input'
 import AppLayout from '~/layouts/app_layout'
 
 import './styles.css'
 
-import { Input } from '~/components/ui/input'
-
-export default function Dashboard() {
+export default function Domains(
+  props: InferPageProps<DomainsController, 'render'>,
+) {
   const dialog = useRef<HTMLDialogElement>(null)
+
+  const { data, setData, post, processing, errors, reset } = useForm({
+    url: '',
+    userId: props.user.id,
+  })
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    post('/domains', {
+      onSuccess: () => {
+        dialog.current?.close()
+        reset('url')
+      },
+    })
+  }
 
   const onAddDomain = () => dialog.current?.showModal()
 
@@ -43,21 +62,38 @@ export default function Dashboard() {
         title="Add a domain"
         description="Add your custom domain to start using it with the application."
         main={
-          <form id="add-domain-form">
+          <form id="add-domain-form" onSubmit={handleSubmit}>
             <Input
               type="text"
               label="Your domain"
               placeholder="link.acme.com"
               required
+              value={data.url}
+              onChange={(e) => setData('url', e.target.value)}
+              error={errors.url}
             />
           </form>
         }
         footer={
           <>
-            <Button variant="secondary" onClick={() => dialog.current?.close()}>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                if (!processing) {
+                  dialog.current?.close()
+                  reset('url')
+                }
+              }}
+              disabled={processing}
+            >
               Cancel
             </Button>
-            <Button variant="primary" type="submit" form="add-domain-form">
+            <Button
+              variant="primary"
+              type="submit"
+              form="add-domain-form"
+              disabled={processing}
+            >
               Add domain
             </Button>
           </>

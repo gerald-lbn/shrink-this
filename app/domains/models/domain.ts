@@ -24,4 +24,7 @@ export default class Domain extends BaseModel {
 
   @hasOne(() => User)
   declare user: HasOne<typeof User>
+
+  @column()
+  declare userId: number
 }
