@@ -14,9 +14,10 @@ import AppLayout from '~/layouts/app_layout'
 
 import './styles.css'
 
-export default function Domains(
-  props: InferPageProps<DomainsController, 'render'>,
-) {
+export default function Domains({
+  user,
+  domains,
+}: InferPageProps<DomainsController, 'render'>) {
   const dialog = useRef<HTMLDialogElement>(null)
 
   const dialogClose = () => {
@@ -28,7 +29,7 @@ export default function Domains(
   const { data, setData, post, processing, errors, reset, clearErrors } =
     useForm({
       url: '',
-      userId: props.user.id,
+      userId: user.id,
     })
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
