@@ -17,14 +17,21 @@ export default function Sidebar({}: SidebarProps) {
       <div className="navigation">
         <header></header>
         <nav>
-          <SidebarItem
-            icon={<IconHomeLine />}
-            label="Dashboard"
-            href="/dashboard"
-          />
-          <SidebarItem icon={<IconLink01 />} label="Links" />
-          <SidebarItem icon={<IconBarChartSquare2 />} label="Analytics" />
-          <SidebarItem icon={<Globe01 />} label="Domains" href="/domains" />
+          <p className="subheading">General</p>
+          <div className="section">
+            <SidebarItem
+              icon={<IconHomeLine />}
+              label="Dashboard"
+              href="/dashboard"
+            />
+            <SidebarItem icon={<IconLink01 />} label="Links" />
+            <SidebarItem icon={<IconBarChartSquare2 />} label="Analytics" />
+          </div>
+
+          <p className="subheading">Settings</p>
+          <div className="section">
+            <SidebarItem icon={<Globe01 />} label="Domains" href="/domains" />
+          </div>
         </nav>
       </div>
       <div className="footer">

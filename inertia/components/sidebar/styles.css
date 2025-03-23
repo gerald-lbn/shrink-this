@@ -16,9 +16,25 @@ aside {
   .navigation {
     padding-top: var(--spacing-3xl);
 
+    .subheading {
+      padding-left: var(--spacing-2xl);
+      padding-right: var(--spacing-2xl);
+      padding-bottom: var(--spacing-xs);
+
+      font-size: var(--text-sm-size);
+      line-height: var(--text-sm-line-height);
+      color: var(--text-quaternary);
+      font-weight: 700;
+    }
+
     nav {
-      padding-left: var(--spacing-lg);
-      padding-right: var(--spacing-lg);
+      div.section {
+        display: flex;
+        flex-direction: column;
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+        padding-bottom: var(--spacing-2xl);
+      }
     }
   }
 
