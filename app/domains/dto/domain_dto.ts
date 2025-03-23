@@ -1,4 +1,3 @@
-import { UserDTO } from '#auth/dto/user_dto'
 import Domain from '#domains/models/domain'
 
 export class DomainDTO {
@@ -12,7 +11,6 @@ export class DomainDTO {
       lastCheck: this.domain.lastCheck,
       createdAt: this.domain.createdAt,
       updatedAt: this.domain.updatedAt,
-      user: new UserDTO(this.domain.user),
       userId: this.domain.userId,
     }
   }
