@@ -3,6 +3,7 @@ import { UserDTO } from '#auth/dto/user_dto'
 import { DomainDTO } from '#domains/dto/domain_dto'
 import { DomainRepository } from '#domains/repositories/domain_repository'
 import { domainValidator } from '#domains/validators/domain_validator'
+import env from '#start/env'
 
 export default class DomainsController {
   async render({ auth, inertia, response }: HttpContext) {
@@ -16,8 +17,13 @@ export default class DomainsController {
     })
   }
 
-  async handle({ request, response }: HttpContext) {
+  async handle({ request, response, session }: HttpContext) {
     const { url, userId } = await request.validateUsing(domainValidator)
+
+    if (url === env.get('ADMIN_DOMAIN'))
+      session.flashErrors({
+        url: 'This is a reserved domain. Please choose another one.',
+      })
 
     await DomainRepository.registerDomain(url, userId)
 
