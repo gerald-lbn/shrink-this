@@ -1,4 +1,5 @@
 import router from '@adonisjs/core/services/router'
+import env from '#start/env'
 import { middleware } from '#start/kernel'
 
 const RegisterController = () => import('#auth/controllers/register_controller')
@@ -18,5 +19,9 @@ router
       .as('register.handle')
   })
   .use(middleware.guest())
+  .domain(env.get('ADMIN_DOMAIN'))
 
-router.get('/logout', [LogoutController, 'handle']).as('logout.handle')
+router
+  .get('/logout', [LogoutController, 'handle'])
+  .as('logout.handle')
+  .domain(env.get('ADMIN_DOMAIN'))

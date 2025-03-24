@@ -1,4 +1,5 @@
 import router from '@adonisjs/core/services/router'
+import env from '#start/env'
 import { middleware } from '#start/kernel'
 
 const DomainsController = () =>
@@ -10,3 +11,4 @@ router
     router.post('/domains', [DomainsController, 'handle']).as('domains.handle')
   })
   .use(middleware.auth())
+  .domain(env.get('ADMIN_DOMAIN'))
