@@ -1,4 +1,5 @@
 import type { HttpContext } from '@adonisjs/core/http'
+import env from '#start/env'
 
 export default class LogoutController {
   async handle({ auth, response }: HttpContext) {
@@ -6,6 +7,12 @@ export default class LogoutController {
     await auth.use('web').logout()
 
     // Redirect to the login page
-    return response.redirect().toRoute('login.render')
+    return response.redirect().toRoute(
+      'login.render',
+      {},
+      {
+        domain: env.get('ADMIN_DOMAIN'),
+      },
+    )
   }
 }

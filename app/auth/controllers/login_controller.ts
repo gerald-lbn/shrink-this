@@ -1,5 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import User from '#auth/models/user'
+import env from '#start/env'
 
 export default class LoginController {
   async render({ inertia }: HttpContext) {
@@ -17,6 +18,12 @@ export default class LoginController {
     await auth.use('web').login(user)
 
     // Redirect to the dashboard
-    return response.redirect().toRoute('dashboard.render')
+    return response.redirect().toRoute(
+      'dashboard.render',
+      {},
+      {
+        domain: env.get('ADMIN_DOMAIN'),
+      },
+    )
   }
 }
