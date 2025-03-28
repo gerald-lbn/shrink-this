@@ -15,18 +15,18 @@
   /* Sizes */
   &.size-sm {
     --_padding: var(--spacing-xxs) var(--spacing-md);
-    --_font-size: var(--font-size-xs);
-    --_line-height: var(--line-height-xs);
+    --_font-size: var(--text-sm-size);
+    --_line-height: var(--text-sm-line-height);
   }
   &.size-md {
     --_padding: var(--spacing-xxs) 10px;
-    --_font-size: var(--font-size-sm);
-    --_line-height: var(--line-height-sm);
+    --_font-size: var(--text-sm-size);
+    --_line-height: var(--text-sm-line-height);
   }
   &.size-lg {
     --_padding: var(--spacing-xs) var(--spacing-lg);
-    --_font-size: var(--font-size-sm);
-    --_line-height: var(--line-height-sm);
+    --_font-size: var(--text-sm-size);
+    --_line-height: var(--text-sm-line-height);
   }
 
   /* Colors */
