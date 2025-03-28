@@ -1,0 +1,38 @@
+.domain-details {
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+}
+
+.domain-details .summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    display: flex;
+    gap: var(--spacing-lg);
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-full);
+      padding: var(--spacing-md);
+    }
+
+    .info {
+      font-weight: 500;
+      color: var(--text-primary);
+
+      .status {
+        margin-top: var(--spacing-xs);
+      }
+    }
+  }
+
+  .right {
+  }
+}

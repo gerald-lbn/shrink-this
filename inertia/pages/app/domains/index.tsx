@@ -6,7 +6,9 @@ import { useRef } from 'react'
 import EmptyState from '~/components/empty_state'
 import Globe01 from '~/components/icons/globe-01'
 import SearchMd from '~/components/icons/search-md'
+import IconSettings01 from '~/components/icons/settings-01'
 import PageHeader from '~/components/page_header'
+import Badge from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
 import Dialog from '~/components/ui/dialog'
 import { Input } from '~/components/ui/input'
@@ -48,18 +50,53 @@ export default function Domains({
         subheading="Add, configure, and verify your custom domains"
       />
 
-      <EmptyState
-        icon={<SearchMd />}
-        title="No domains found"
-        description="You don't have any domains yet. Add a domain to get started."
-        actions={<Button onClick={onAddDomain}>Add a domain</Button>}
-        style={{
-          border: '1px solid var(--border-secondary)',
-          borderRadius: 'var(--radius-md)',
-          height: '32rem',
-          justifyContent: 'center',
-        }}
-      />
+      {domains.length > 0 ? (
+        domains.map((domain) => (
+          <details key={domain.id} className="domain-details" name="domain">
+            <summary className="summary">
+              <div className="left">
+                <div className="icon">
+                  <Globe01 width={20} height={20} />
+                </div>
+
+                <div className="info">
+                  <p>{domain.url}</p>
+                  <p className="status">
+                    <Badge
+                      size="sm"
+                      color={domain.verified ? 'success' : 'error'}
+                      type="pill"
+                    >
+                      {domain.verified ? 'Verified' : 'Unverified'}
+                    </Badge>
+                  </p>
+                </div>
+              </div>
+
+              <div className="right">
+                <Button variant="secondary" iconOnly>
+                  <IconSettings01 />
+                </Button>
+              </div>
+            </summary>
+
+            <div className="domain-content"></div>
+          </details>
+        ))
+      ) : (
+        <EmptyState
+          icon={<SearchMd />}
+          title="No domains found"
+          description="You don't have any domains yet. Add a domain to get started."
+          actions={<Button onClick={onAddDomain}>Add a domain</Button>}
+          style={{
+            border: '1px solid var(--border-secondary)',
+            borderRadius: 'var(--radius-md)',
+            height: '32rem',
+            justifyContent: 'center',
+          }}
+        />
+      )}
 
       <Dialog
         ref={dialog}
