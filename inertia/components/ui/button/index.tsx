@@ -16,10 +16,15 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', ...props }, ref) => {
+  (
+    { className, variant = 'primary', size = 'md', iconOnly, ...props },
+    ref,
+  ) => {
     return (
       <button
-        className={`button variant-${variant} size-${size}`}
+        className={`button variant-${variant} size-${size} ${
+          iconOnly ? 'icon-only' : ''
+        } ${className}`}
         ref={ref}
         {...props}
       />

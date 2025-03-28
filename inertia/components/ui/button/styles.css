@@ -125,4 +125,15 @@ button {
     --_padding: var(--spacing-lg) 1.125rem;
     --_gap: var(--spacing-sm);
   }
+
+  &.icon-only {
+    --_padding: 0;
+    --_gap: 0;
+    width: var(--_height);
+
+    svg {
+      width: 1.25rem; /* 20px */
+      height: 1.25rem; /* 20px */
+    }
+  }
 }
