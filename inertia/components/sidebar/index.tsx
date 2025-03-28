@@ -19,11 +19,7 @@ export default function Sidebar({}: SidebarProps) {
         <nav>
           <p className="subheading">General</p>
           <div className="section">
-            <SidebarItem
-              icon={<IconHomeLine />}
-              label="Dashboard"
-              href="/dashboard"
-            />
+            <SidebarItem icon={<IconHomeLine />} label="Dashboard" href="/" />
             <SidebarItem icon={<IconLink01 />} label="Links" />
             <SidebarItem icon={<IconBarChartSquare2 />} label="Analytics" />
           </div>

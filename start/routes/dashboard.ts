@@ -6,7 +6,7 @@ const DashboardController = () =>
   import('#dashboard/controllers/dashboard_controller')
 
 router
-  .get('/dashboard', [DashboardController, 'render'])
+  .get('/', [DashboardController, 'render'])
   .as('dashboard.render')
   .use(middleware.auth())
   .domain(env.get('ADMIN_DOMAIN'))
